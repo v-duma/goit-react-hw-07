@@ -8,7 +8,6 @@ import { createSelector } from "reselect";
 export const ContactList = () => {
   const dispatch = useDispatch();
 
-  // Використання мемоізованого селектора
   const filteredContactsSelector = createSelector(
     (state) => state.contacts.items,
     (state) => state.filters.name,
@@ -25,7 +24,7 @@ export const ContactList = () => {
   };
 
   return (
-    <div>
+    <div className="contactsList">
       {filteredContacts.map((contact, index) => (
         <div key={index} className={css.contact}>
           <div className={css.name_number}>
